@@ -1,0 +1,32 @@
+{
+  "name": "Instaglob",
+  "displayName": "Hello World",
+  "version": "0.0.1",
+  "description": "Simple mobile application to share your discover.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel www -d lib"
+  },
+  "author": "Jérémy Razafinirina, Marwan Sentenac, Damien Babiany, Alexandre Li Puma, Alice Beneyton, Juan Bzn",
+  "license": "MIT",
+  "dependencies": {
+    "cordova-android": "^7.0.0",
+    "cordova-browser": "^5.0.3",
+    "cordova-ios": "^4.5.4",
+    "cordova-plugin-whitelist": "^1.3.3"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {}
+    },
+    "platforms": [
+      "ios",
+      "browser"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
