@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
+        <link rel="stylesheet" type="text/css" href="styles.css">
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Team 5 Project</h1>
-            <!-- TRY PUSH -->
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+      <div id='map' style='width: 100vw; height: 100vh;'></div>
+
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="bundle.js"></script>
     </body>
 </html>
