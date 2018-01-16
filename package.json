@@ -5,8 +5,8 @@
   "description": "Simple mobile application to share your discover.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel www -d lib"
+    "dev": "watchify src/index.js -o www/bundle.js -t [ babelify --presets [ env ] ] ",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jérémy Razafinirina, Marwan Sentenac, Damien Babiany, Alexandre Li Puma, Alice Beneyton, Juan Bzn",
   "license": "MIT",
@@ -27,6 +27,9 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browserify": "^15.2.0"
   }
 }
