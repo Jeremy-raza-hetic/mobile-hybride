@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-(function() {
-  
-  // Initialize Firebase
-  // TODO: Replace with your project's customized code snippet
-  var config = {
-    apiKey: "AIzaSyA0nYusQEvt3tygQiWTe6t_lcheuz9MvpA",
-    authDomain: "wewalk-23025.firebaseapp.com",
-    databaseURL: "https://wewalk-23025.firebaseio.com/",
-    storageBucket: "gs://wewalk-23025.appspot.com",
-
-  };
-  firebase.initializeApp(config);
-=======
-
->>>>>>> 52eb34708b016fdec170ae7d04e64c88c2c14f16
 
   const txtemail = document.getElementById("email");
   const txtpassword = document.getElementById("password");
@@ -95,20 +79,7 @@
     promise.catch(e => console.log(e.message));
   })
 
-<<<<<<< HEAD
 
-
-=======
-      }
-  })
- authentification
-  //Current Users
-
-  
-=======
-  var user = firebase.auth().currentUser;
- master
->>>>>>> 52eb34708b016fdec170ae7d04e64c88c2c14f16
 
 
 
