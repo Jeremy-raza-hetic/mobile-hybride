@@ -7,6 +7,11 @@
   right: 0;
   z-index: 98;
   border-radius: 10px;
+  padding: 30px;
+  color: #8F8F8F;
+  background: #FAFAFA;
+  display: flex;
+  overflow: auto;
 
   transform: translateY(100%);
   transition: transform .6s;
@@ -23,13 +28,72 @@
   }
 }
 
+.card-img {
+  background: lightGrey;
+  border-radius: 10px;
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+
+  transition: .3s width;
+}
+
+.card-texts {
+  margin-left: 30px;
+
+  .card-title {
+    font-size: 20px;
+  }
+
+  .card-description {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
 body.cardPreview .card {
   transform: translateY(calc(100% - 180px));
-  transition: transform .6s;
+  transition: transform .6s, padding .3s;
 }
 
 body.cardFull .card {
   transform: translateY(0);
-  transition: transform .6s, border-radius .3s;
+  transition: transform .6s, border-radius .3s, padding .3s;
   border-radius: 0;
+  padding: 0;
+  display: block;
+
+  &:after {
+    display: none;
+  }
+
+  .card-img {
+    border-radius: 0;
+    width: 100%;
+
+    transition: .3s width;
+  }
+
+  .card-texts {
+    margin: 0;
+
+    .card-title {
+      background: white;
+      margin: -30px 10px 10px;
+      padding: 20px;
+      box-shadow: 0 0 20px 0 rgba(0,0,0,0.05);
+      border-radius: 10px;
+    }
+
+    .card-description {
+      background: white;
+      margin: 10px;
+      padding: 20px;
+      box-shadow: 0 0 20px 0 rgba(0,0,0,0.05);
+      border-radius: 10px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.3;
+    }
+  }
 }
