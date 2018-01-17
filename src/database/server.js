@@ -2,6 +2,7 @@ let db = firebase.database();
 let places = firebase.database.ref().child('places');
 let user = firebase.auth().currentUser;
 
+console.log('bite');
 console.log(places);
 
 places.on('child__added', snapshot => console.log(snapshot.val()));
@@ -29,7 +30,7 @@ let updatePin = picturesUrl => {
     if (user) {
         let obj = {
             _id: pinId,
-            pictures = picturesUrl
+            pictures: picturesUrl
         }
     } else {
         console.log('Not authentified');
