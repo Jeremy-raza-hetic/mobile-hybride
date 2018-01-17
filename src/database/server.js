@@ -1,10 +1,6 @@
 let db = firebase.database();
 let places = firebase.database().ref('users');
 
-
-console.log(places);
-console.log('bite');
-
 places.on('value', snapshot => console.log(snapshot.val()));
 
 // Add new pin
