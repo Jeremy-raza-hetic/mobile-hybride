@@ -2,8 +2,7 @@ var config = {
   apiKey: "AIzaSyA0nYusQEvt3tygQiWTe6t_lcheuz9MvpA",
   authDomain: "wewalk-23025.firebaseapp.com",
   databaseURL: "https://wewalk-23025.firebaseio.com/",
-  storageBucket: "gs://wewalk-23025.appspot.com",
-
+  storageBucket: "gs://wewalk-23025.appspot.com"
 };
 firebase.initializeApp(config);
 
@@ -36,12 +35,12 @@ const body = document.querySelector('body');
 })
   //Current Users
 
-  const user = firebase.auth().currentUser;
-  if (user != null) {
-    console.log('sign in');
-  } else {
-    console.log('Not sign in')
-  }
+const user = firebase.auth().currentUser;
+if (user != null) {
+  console.log('sign in');
+} else {
+  console.log('Not sign in')
+}
 
   //Connexion d'un utilisateur
 btnlog.addEventListener('click', e => {
@@ -54,9 +53,7 @@ btnlog.addEventListener('click', e => {
   .then( active(user) )
   .catch(e => console.log(e.message));
 
-
   active(user)
-
 })
 
 // //Deconnexion d'un utilisateur
@@ -84,5 +81,4 @@ btnsign.addEventListener('click', e => {
 
   const promise = auth.createUserWithEmailAndPassword(email, password);
   promise.catch(e => console.log(e.message));
-
 })
