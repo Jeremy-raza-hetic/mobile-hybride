@@ -1,14 +1,14 @@
 let db = firebase.database();
-let places = firebase.database.ref().child('places');
-let user = firebase.auth().currentUser;
+let places = firebase.database().ref('users');
 
-console.log('bite');
+
 console.log(places);
+console.log('bite');
 
-places.on('child__added', snapshot => console.log(snapshot.val()));
+places.on('value', snapshot => console.log(snapshot.val()));
 
 // Add new pin
-let id = firebase.database().ref().child('places').push().key;
+/*let id = firebase.database().ref().child('places').push().key;
 let addNewPin = description => {
     if (user) {
         let obj = {
@@ -39,4 +39,4 @@ let updatePin = picturesUrl => {
     updates['/places/' + _id] = obj;
 
     return firebase.database().ref().update(updates);
-}
+}*/
