@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (function() {
   
   // Initialize Firebase
@@ -10,6 +11,9 @@
 
   };
   firebase.initializeApp(config);
+=======
+
+>>>>>>> 52eb34708b016fdec170ae7d04e64c88c2c14f16
 
   const txtemail = document.getElementById("email");
   const txtpassword = document.getElementById("password");
@@ -47,7 +51,7 @@
       console.log('Not sign in')
     }
 
-    //Connexion d'un utilisateur 
+    //Connexion d'un utilisateur
   btnlog.addEventListener('click', e => {
 
     const email = txtemail.value;
@@ -91,11 +95,22 @@
     promise.catch(e => console.log(e.message));
   })
 
+<<<<<<< HEAD
 
 
+=======
+      }
+  })
+ authentification
+  //Current Users
+
+  
+=======
+  var user = firebase.auth().currentUser;
+ master
+>>>>>>> 52eb34708b016fdec170ae7d04e64c88c2c14f16
 
 
-}());
 
 
 
