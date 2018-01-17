@@ -18,6 +18,20 @@
 
   })
 
+    //Deconnexion d'un utilisateur
+    btnout.addEventListener('click', e => {
+
+      const auth = firebase.auth()
+
+      auth.signOut().then(function() {
+        console.log('sign out')
+      }).catch(function(error) {
+        console.log('error')
+      })
+      
+
+    })
+
     //Inscription d'un utilisateur
   btnsign.addEventListener('click', e => {
 
@@ -27,8 +41,6 @@
 
     const promise = auth.createUserWithEmailAndPassword(email, password);
     promise.catch(e => console.log(e.message));
-
-
   })
   //Add a User
   firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -39,13 +51,20 @@
 
       }
   })
+ authentification
+  //Current Users
 
+  
+=======
   var user = firebase.auth().currentUser;
+ master
 
-  if (user) {
+  if (user != null) {
     console.log('sign in')
   } else {
     console.log('Not sign in')
   }
+
+
 
 
