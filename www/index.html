@@ -13,6 +13,18 @@
       <div id='map' style='width: 100vw; height: 100vh;'></div>
 
       <script type="text/javascript" src="cordova.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+      <script>
+          // Initialize Firebase
+          var config = {
+              apiKey: "AIzaSyA0nYusQEvt3tygQiWTe6t_lcheuz9MvpA",
+              authDomain: "wewalk-23025.firebaseapp.com",
+              databaseURL: "https://wewalk-23025.firebaseio.com/",
+              storageBucket: "gs://wewalk-23025.appspot.com",
+
+          };
+          firebase.initializeApp(config);
+      </script>
       <script type="text/javascript" src="bundle.js"></script>
     </body>
 </html>
