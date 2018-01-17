@@ -7,6 +7,9 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "chattrotter"
+    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "chattrotter"
     }
