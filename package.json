@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "watchify src/index.js -o www/bundle.js -t [ babelify --presets [ env ] ] ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass --watch www/scss/index.scss:www/styles.css"
   },
   "author": "Jérémy Razafinirina, Marwan Sentenac, Damien Babiany, Alexandre Li Puma, Alice Beneyton, Juan Bzn",
   "license": "MIT",
@@ -32,6 +32,7 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
-    "browserify": "^15.2.0"
+    "browserify": "^15.2.0",
+    "node-sass": "^4.7.2"
   }
 }

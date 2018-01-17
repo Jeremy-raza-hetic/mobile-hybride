@@ -3,3 +3,4 @@ platforms
 .idea
 /www/bundle.js
 .DS_Store
+.sass-cache

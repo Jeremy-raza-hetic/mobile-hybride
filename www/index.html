@@ -5,11 +5,28 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
         <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
         <link rel="stylesheet" type="text/css" href="styles.css">
         <title>Hello World</title>
     </head>
-    <body>
+    <body class="logged cardPrevie">
+      <div class="login">
+        <h1>wego</h1>
+        <form>
+          <input type="text" name="" value="" placeholder="E-mail">
+          <input type="password" name="" value="" placeholder="Password">
+          <input type="button" name="" value="Let's go !">
+        </form>
+        <a class="signUp" href="#">Don't have an account yet ?</a>
+      </div>
+      <div class='tabbar'>
+        <div>1</div>
+        <div class="mainCircleButton"><span>2</span></div>
+        <div>3</div>
+      </div>
+      <div class='card'></div>
+
       <div id='map' style='width: 100vw; height: 100vh;'></div>
 
       <script type="text/javascript" src="cordova.js"></script>

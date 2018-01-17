@@ -1,10 +1,10 @@
 import mapboxgl from 'mapbox-gl'
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibXJ3cyIsImEiOiJjamNoaG52cTQxcjV2MnhybmR0b291NzAwIn0.llM1G3MnRKpw0rG3s6wH3w'
+mapboxgl.accessToken = 'pk.eyJ1IjoianVhbmJ6IiwiYSI6ImNqY2l2aGJ1ZTFyb3gzNHBhcXg0b2kxMzgifQ.xE9EAnPpVLK3F3WxEhj1hg'
 
 const map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v10',
+  style: 'mapbox://styles/juanbz/cjcj5ka0q10rz2slqmee4k9hl',
   center: [2.34, 48.854],
   maxBounds: [[2.214, 48.75], [2.489, 48.954]],
   zoom: 11
