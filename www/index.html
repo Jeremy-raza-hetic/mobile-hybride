@@ -14,11 +14,11 @@
       <div class="login">
         <h1>wego</h1>
         <form>
-          <input type="text" name="" value="" placeholder="E-mail">
-          <input type="password" name="" value="" placeholder="Password">
-          <input type="button" name="" value="Let's go !">
+          <input type="text" name="" value="" placeholder="E-mail" id="email">
+          <input type="password" name="" value="" placeholder="Password" id="password">
+          <input type="submit" name="" value="Let's go !" id="btnlog">
         </form>
-        <a class="signUp" href="#">Don't have an account yet ?</a>
+        <a class="signUp" id="btnsign" href="#">Don't have an account yet ?</a>
       </div>
       <div class='tabbar'>
         <div>1</div>
@@ -42,17 +42,6 @@
 
       <script type="text/javascript" src="cordova.js"></script>
       <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
-      <script>
-          // Initialize Firebase
-          var config = {
-              apiKey: "AIzaSyA0nYusQEvt3tygQiWTe6t_lcheuz9MvpA",
-              authDomain: "wewalk-23025.firebaseapp.com",
-              databaseURL: "https://wewalk-23025.firebaseio.com/",
-              storageBucket: "gs://wewalk-23025.appspot.com",
-
-          };
-          firebase.initializeApp(config);
-      </script>
       <script type="text/javascript" src="bundle.js"></script>
     </body>
 </html>
