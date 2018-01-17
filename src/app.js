@@ -1,94 +1,88 @@
+var config = {
+  apiKey: "AIzaSyA0nYusQEvt3tygQiWTe6t_lcheuz9MvpA",
+  authDomain: "wewalk-23025.firebaseapp.com",
+  databaseURL: "https://wewalk-23025.firebaseio.com/",
+  storageBucket: "gs://wewalk-23025.appspot.com",
 
-(function() {
+};
+firebase.initializeApp(config);
 
-  var config = {
-    apiKey: "AIzaSyA0nYusQEvt3tygQiWTe6t_lcheuz9MvpA",
-    authDomain: "wewalk-23025.firebaseapp.com",
-    databaseURL: "https://wewalk-23025.firebaseio.com/",
-    storageBucket: "gs://wewalk-23025.appspot.com",
-
-  };
-  firebase.initializeApp(config);
-
-  const txtemail = document.getElementById("email");
-  const txtpassword = document.getElementById("password");
-  const btnlog = document.getElementById('btnlog');
-  const btnsign = document.getElementById('btnsign');
-  const body = document.querySelector('body');
+const txtemail = document.getElementById("email");
+const txtpassword = document.getElementById("password");
+const btnlog = document.getElementById('btnlog');
+const btnsign = document.getElementById('btnsign');
+const body = document.querySelector('body');
 
 
-   const active = (user) => {
-    if (user != null) {
-      body.classList.add('logged')
+ const active = (user) => {
+  if (user != null) {
+    body.classList.add('logged')
+  }
+}
+
+ const unActive = (user) => {
+  if (user != null) {
+    body.classList.remove('logged')
+  }
+ }
+  //Add a User
+  firebase.auth().onAuthStateChanged(firebaseUser => {
+    if(firebaseUser) {
+        console.log(firebaseUser);
+        active(firebaseUser)
+    } else {
+        console.log('not logged id');
     }
+})
+  //Current Users
+
+  const user = firebase.auth().currentUser;
+  if (user != null) {
+    console.log('sign in');
+  } else {
+    console.log('Not sign in')
   }
 
-   const unActive = (user) => {
-    if (user != null) {
-      body.classList.remove('logged')
-    }
-   }
-    //Add a User
-    firebase.auth().onAuthStateChanged(firebaseUser => {
-      if(firebaseUser) {
-          console.log(firebaseUser);
-          active(firebaseUser)
-      } else {
-          console.log('not logged id');
-      }
-  })
-    //Current Users
+  //Connexion d'un utilisateur
+btnlog.addEventListener('click', e => {
 
-    const user = firebase.auth().currentUser;
-    if (user != null) {
-      console.log('sign in');
-    } else {
-      console.log('Not sign in')
-    }
-
-    //Connexion d'un utilisateur
-  btnlog.addEventListener('click', e => {
-
-    const email = txtemail.value;
-    const password = txtpassword.value;
-    const auth = firebase.auth()
-    const user = firebase.auth().currentUser;
-    auth.signInWithEmailAndPassword(email, password)
-    .then( active(user) )
-    .catch(e => console.log(e.message));
+  const email = txtemail.value;
+  const password = txtpassword.value;
+  const auth = firebase.auth()
+  const user = firebase.auth().currentUser;
+  auth.signInWithEmailAndPassword(email, password)
+  .then( active(user) )
+  .catch(e => console.log(e.message));
 
 
-    active(user)
+  active(user)
 
-  })
+})
 
-    //Deconnexion d'un utilisateur
-    btnout.addEventListener('click', e => {
+// //Deconnexion d'un utilisateur
+// btnout.addEventListener('click', e => {
+//
+//   const auth = firebase.auth()
+//
+//   auth.signOut().then(function() {
+//     console.log('sign out')
+//     body.classList.remove('logged')
+//   }).catch(function(error) {
+//     console.log('error')
+//   })
+//
+// })
 
-      const auth = firebase.auth()
+  //Inscription d'un utilisateur
+btnsign.addEventListener('click', e => {
 
-      auth.signOut().then(function() {
-        console.log('sign out')
-        body.classList.remove('logged')
-      }).catch(function(error) {
-        console.log('error')
-      })
-
-
-    })
-
-    //Inscription d'un utilisateur
-  btnsign.addEventListener('click', e => {
-
-    const email = txtemail.value;
-    const password = txtpassword.value;
-    const auth = firebase.auth();
-    const user = firebase.auth().currentUser;
+  const email = txtemail.value;
+  const password = txtpassword.value;
+  const auth = firebase.auth();
+  const user = firebase.auth().currentUser;
 
 
-    const promise = auth.createUserWithEmailAndPassword(email, password);
-    promise.catch(e => console.log(e.message));
+  const promise = auth.createUserWithEmailAndPassword(email, password);
+  promise.catch(e => console.log(e.message));
 
-  })
-
-}());
+})
