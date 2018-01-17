@@ -51,26 +51,24 @@ btnlog.addEventListener('click', e => {
   const user = firebase.auth().currentUser;
   auth.signInWithEmailAndPassword(email, password)
   .then( active(user) )
-  .catch(e => console.log(e.message));
+  .catch(e => alert(e.message));
 
   active(user)
 })
 
-// //Deconnexion d'un utilisateur
-// btnout.addEventListener('click', e => {
-//
-//   const auth = firebase.auth()
-//
-//   auth.signOut().then(function() {
-//     console.log('sign out')
-//     body.classList.remove('logged')
-//   }).catch(function(error) {
-//     console.log('error')
-//   })
-//
-// })
+//Deconnexion d'un utilisateur
+window.logout = () => {
+  const auth = firebase.auth()
 
-  //Inscription d'un utilisateur
+  auth.signOut().then(function() {
+    console.log('sign out')
+    body.classList.remove('logged')
+  }).catch(function(error) {
+    alert('error')
+  })
+}
+
+//Inscription d'un utilisateur
 btnsign.addEventListener('click', e => {
 
   const email = txtemail.value;
@@ -80,5 +78,5 @@ btnsign.addEventListener('click', e => {
 
 
   const promise = auth.createUserWithEmailAndPassword(email, password);
-  promise.catch(e => console.log(e.message));
+  promise.catch(e => alert(e.message));
 })
