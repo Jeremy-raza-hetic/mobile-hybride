@@ -22,7 +22,7 @@
       </div>
       <div class='tabbar'>
         <div>1</div>
-        <div class="mainCircleButton"><span>2</span></div>
+        <div class="mainCircleButton" id="mainCircleButton"><span>2</span></div>
         <div>3</div>
       </div>
       <div class='card'>
@@ -35,6 +35,18 @@
           <div class="card-description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam faucibus est. Morbi ornare placerat urna. Donec tempor sapien quis metus suscipit, eget elementum neque volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent consequat aliquet arcu vel vehicula. Quisque commodo elit nec efficitur blandit. Nulla vulputate, magna a ullamcorper semper, sem eros condimentum dolor, vitae sagittis ante leo non risus.
           </div>
+        </div>
+      </div>
+
+      <div class='addPin' id="addPin">
+        <div class='wrap'>
+          <form onsubmit="event.preventDefault()">
+            <pre id="currentCoords"></pre>
+            <input type="text" name="" value="" placeholder="Titre">
+            <textarea name="name" rows="8" placeholder="Description"></textarea>
+            <input type="button" name="" value="Annuler">
+            <input type="submit" name="" value="Valider">
+          </form>
         </div>
       </div>
 

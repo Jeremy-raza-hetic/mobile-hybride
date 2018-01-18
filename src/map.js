@@ -90,3 +90,5 @@ export const updateData = (dataOject) => {
     }
   }
 ].map((e) => e)
+
+export default map
