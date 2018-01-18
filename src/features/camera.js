@@ -1,7 +1,6 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     console.log('device ready');
-    alert('hello world');
 };
 
 const openFilePicker = () => {
