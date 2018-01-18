@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cabin', sans-serif;
+}
+
+body {
+  background: #FF7942;
+}
+
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  z-index: 99;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 2rem;
+  color: #8F8F8F;
+  box-shadow: 0 2px 130px rgba(0, 0, 0, .15);
+
+  .mainCircleButton {
+    height: 80px;
+    width: 80px;
+    background-image: linear-gradient(0deg, #FF8040 15%, #FF4F4F 100%);
+    border: 5px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+}
+
+@import "login";
+@import "card";
