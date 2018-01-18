@@ -13,7 +13,7 @@ export const onSuccess = (position) => {
     watchID();
 };
 
-function onError(error) {
+const onError = error => {
     console.log(error);
 };
 

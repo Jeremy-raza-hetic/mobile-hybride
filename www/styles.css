@@ -60,7 +60,7 @@ body {
   align-items: justify; }
   .login form input {
     outline: none; }
-  .login form input[type='text'], .login form input[type='password'] {
+  .login form input[type='email'], .login form input[type='password'] {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 100px;
     border: 0;
@@ -71,7 +71,7 @@ body {
     .login form input[type='text']::placeholder, .login form input[type='password']::placeholder {
       color: white;
       opacity: .7; }
-  .login form input[type=submit] {
+  .login form input[type=button] {
     background: white;
     color: #FF7942;
     padding: 15px 20px;

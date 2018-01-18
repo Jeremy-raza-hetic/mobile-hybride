@@ -36,7 +36,7 @@
     outline: none;
   }
 
-  input[type='text'], input[type='password'] {
+  input[type='email'], input[type='password'] {
     background: rgba(255, 255, 255, .05);
     border-radius: 100px;
     border: 0;
@@ -50,7 +50,7 @@
       opacity: .7;
     }
   }
-  input[type=submit] {
+  input[type=button] {
     background: white;
     color: #FF7942;
     padding: 15px 20px;
