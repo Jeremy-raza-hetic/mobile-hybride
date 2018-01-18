@@ -10,10 +10,23 @@ export const getPosition = () => {
 
 export const onSuccess = (position) => {
     return userPos = [position.coords.longitude, position.coords.latitude];
+    watchID();
 };
 
 function onError(error) {
     console.log(error);
+};
+
+export const watchingSuccess = position => {
+    return userPos = [position.coords.longitude, position.coords.latitude];
+};
+
+const watchingError = err => {
+    console.log(err)
+};
+
+export const watchID = () => {
+    navigator.geolocation.watchPosition(watchingSuccess, watchingError, { timeout: 3000 });
 };
 
 /*const btn = document.getElementById('btn');
