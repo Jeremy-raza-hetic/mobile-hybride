@@ -12,6 +12,9 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "chattrotter"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "chattrotter"
     }
   },
   "dependent_plugins": {}
