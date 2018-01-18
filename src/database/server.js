@@ -1,38 +1,38 @@
-let db = firebase.database();
-let places = firebase.database().ref('users');
+import {updateData} from '../map.js'
 
-places.on('value', snapshot => console.log(snapshot.val()));
+let db = firebase.database()
+let places = firebase.database().ref('places')
 
-// Add new pin
-/*let id = firebase.database().ref().child('places').push().key;
-let addNewPin = description => {
-    if (user) {
-        let obj = {
-            pictures: [],
-            description: description
-        }
-    } else {
-        console.log('Not authentified');
-    }
+places.on('value', snapshot => {
+  const val = snapshot.val()
+  Object.keys(val).map(e => val[e]).map(e => {
+    updateData({
+      'type': 'Feature',
+      'properties': {
+        id: e._id,
+        name: e.name,
+        description: e.description
+      },
+      'geometry': {
+        'type': 'Point',
+        'coordinates': [
+          e.localisation.lng,
+          e.localisation.lat
+        ]
+      }
+    })
+  })
+})
 
-    let updates = {};
-    updates['/places/' + id] = obj;
-
-    firebase.database().ref().update(updates);
-};
-
-let updatePin = picturesUrl => {
-    let pinID = '';
-    if (user) {
-        let obj = {
-            _id: pinId,
-            pictures: picturesUrl
-        }
-    } else {
-        console.log('Not authentified');
-    }
-    let updates = {};
-    updates['/places/' + _id] = obj;
-
-    return firebase.database().ref().update(updates);
-}*/
+export const addNewPin = (description, localisation, pictureEncoded, name) => {
+  const newPlacesRef = places.push()
+  const newPlaceId = firebase.database().ref().child('places').push().key
+  console.log(newPlaceId)
+  newPlacesRef.set({
+    _id: newPlaceId,
+    description,
+    localisation,
+    pictureEncoded,
+    name
+  })
+}

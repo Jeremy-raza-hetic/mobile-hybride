@@ -10,85 +10,45 @@ const map = new mapboxgl.Map({
   zoom: 11
 })
 
-const data = {
+const layer = {
   'id': 'symbols',
   'type': 'symbol',
-  'source': {
-    'type': 'geojson',
-    'data': {
-      'type': 'FeatureCollection',
-      'features': []
-    }
-  },
+  'source': 'geojson',
   'layout': {
-    'icon-image': 'triangle-stroked-15'
+    'icon-image': 'circle-15'
   }
+}
+const data = {
+  "type": "FeatureCollection",
+  "features": []
 }
 
 map.on('load', () => {
-  map.addLayer(data)
+  map.addSource('geojson', {
+    "type": "geojson",
+    data
+  })
+  map.addLayer(layer)
 
-    // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
   map.on('click', 'symbols', function (e) {
-    // map.flyTo({center: e.features[0].geometry.coordinates})
     console.log(e.features[0].properties)
   })
 
-    // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
   map.on('mouseenter', 'symbols', function () {
     map.getCanvas().style.cursor = 'pointer'
   })
 
-    // Change it back to a pointer when it leaves.
   map.on('mouseleave', 'symbols', function () {
     map.getCanvas().style.cursor = ''
   })
 })
 
-export const updateData = (dataOject) => {
-  data.source.data.features.push(dataOject)
-}
+console.log(map.getSource('geojson'))
 
-[
-  {
-    'type': 'Feature',
-    'properties': {
-      id: 1
-    },
-    'geometry': {
-      'type': 'Point',
-      'coordinates': [
-        -91.395263671875,
-        -0.9145729757782163
-      ]
-    }
-  },
-  {
-    'type': 'Feature',
-    'properties': {
-      id: 2
-    },
-    'geometry': {
-      'type': 'Point',
-      'coordinates': [
-        -90.32958984375,
-        -0.6344474832838974
-      ]
-    }
-  },
-  {
-    'type': 'Feature',
-    'properties': {
-      id: 3
-    },
-    'geometry': {
-      'type': 'Point',
-      'coordinates': [
-        -91.34033203125,
-        0.01647949196029245
-      ]
-    }
-  }
-].map((e) => e)
+export const updateData = (dataOject) => {
+  data.features.push(dataOject)
+  map.getSource('geojson').setData(data)
+  console.log(map.getSource('geojson'))
+}
 
 export default map
