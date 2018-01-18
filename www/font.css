@@ -43,10 +43,19 @@
 }
 .icon-rocket-icon:before {
   content: "\62";
+
+ 
 }
 .icon-push-pin-icon:before {
   content: "\63";
 }
 .icon-avatar-icon:before {
   content: "\64";
+ 
+}
+.icon-avatar-icon {
+  font-size: 25px;
+}
+.icon-rocket-icon {
+  font-size: 25px;
 }
