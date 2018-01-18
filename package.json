@@ -20,9 +20,12 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-camera": {},
       "cordova-plugin-geolocation": {
         "GEOLOCATION_USAGE_DESCRIPTION": "demo for hetic"
+      },
+      "cordova-plugin-camera": {
+        "CAMERA_USAGE_DESCRIPTION": "your usage message",
+        "PHOTOLIBRARY_USAGE_DESCRIPTION": "your usage message"
       }
     },
     "platforms": [

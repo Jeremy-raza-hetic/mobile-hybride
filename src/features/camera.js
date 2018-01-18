@@ -4,6 +4,7 @@ function onDeviceReady() {
 };
 
 const openFilePicker = () => {
+    alert('open ready');
     const options = {
         quality: 50,
         destinationType: Camera.DestinationType.FILE_URL,
@@ -24,7 +25,6 @@ const cameraError = () => {
     console.log('bbb');
 };
 
- /*const btn = document.getElementById('btn');
+ const photo = document.getElementById('photo');
 
- btn.addEventListener('click', openFilePicker);
-*/
+ photo.addEventListener('click', openFilePicker);
