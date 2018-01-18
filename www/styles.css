@@ -20,6 +20,8 @@ body {
   padding: 0 2rem;
   color: #8F8F8F;
   box-shadow: 0 2px 130px rgba(0, 0, 0, 0.15); }
+  .tabbar > div {
+    display: flex; }
   .tabbar .mainCircleButton {
     height: 80px;
     width: 80px;
@@ -60,6 +62,9 @@ body {
   align-items: justify; }
   .login form input {
     outline: none; }
+    .login form input::placeholder {
+      color: white;
+      opacity: .7; }
   .login form input[type='email'], .login form input[type='password'] {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 100px;
@@ -68,9 +73,6 @@ body {
     color: white;
     margin-bottom: 1rem;
     font-size: 14px; }
-    .login form input[type='text']::placeholder, .login form input[type='password']::placeholder {
-      color: white;
-      opacity: .7; }
   .login form input[type=button] {
     background: white;
     color: #FF7942;

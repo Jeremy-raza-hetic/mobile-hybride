@@ -34,6 +34,11 @@
 
   input {
     outline: none;
+
+    &::placeholder {
+      color: white;
+      opacity: .7;
+    }
   }
 
   input[type='email'], input[type='password'] {
@@ -45,10 +50,7 @@
     margin-bottom: 1rem;
     font-size: 14px;
 
-    &::placeholder {
-      color: white;
-      opacity: .7;
-    }
+
   }
   input[type=button] {
     background: white;
