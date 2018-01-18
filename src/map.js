@@ -45,6 +45,10 @@ map.on('load', () => {
     map.getCanvas().style.cursor = ''
   })
 
+  map.on('dragstart', 'symbols', () => {
+    document.body.className = 'logged'
+  })
+
   bindDB()
 })
 

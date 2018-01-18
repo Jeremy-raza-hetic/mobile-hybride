@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-2110.481 1473.518 251.126 251.126">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill-rule: evenodd;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_44" data-name="Rectangle 44" class="cls-1" width="251.126" height="251.126" transform="translate(-1642 1839)"/>
+    </clipPath>
+  </defs>
+  <g id="Pin_Walk" data-name="Pin &amp; Walk" class="cls-2" transform="translate(-468.482 -365.482)">
+    <g id="noun_1242276_cc" transform="translate(-1583.599 1897.401)">
+      <path id="Tracé_759" data-name="Tracé 759" class="cls-3" d="M500.163,334.082A70.082,70.082,0,1,1,430.082,264,70.085,70.085,0,0,1,500.163,334.082Zm-11.68,0a58.4,58.4,0,1,0-58.4,58.4A58.4,58.4,0,0,0,488.483,334.082Zm-42.1,16.3-48.894,16.294,16.294-48.893,48.894-16.294Zm-23.361-23.361-7.067,21.188,21.188-7.066,7.066-21.188Z" transform="translate(-360 -264)"/>
+    </g>
+  </g>
+</svg>

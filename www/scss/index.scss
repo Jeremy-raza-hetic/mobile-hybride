@@ -23,6 +23,10 @@ body {
   color: #8F8F8F;
   box-shadow: 0 2px 130px rgba(0, 0, 0, .15);
 
+  > div {
+    display: flex;
+  }
+
   .mainCircleButton {
     height: 80px;
     width: 80px;
