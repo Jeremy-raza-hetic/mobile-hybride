@@ -3,30 +3,23 @@ function onDeviceReady() {
     console.log("navigator.geolocation works well");
 }
 
-export const getCurrentPosition = (position) => {
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+export const getPosition = () => {
+    alert('getting pos');
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, {timeout:1000});
 };
-
 
 export const onSuccess = (position) => {
-   return pos = [position.coords.longitude, position.coords.latitude];
+    return userPos = [position.coords.longitude, position.coords.latitude];
 };
 
-const onError = (error) => {
+function onError(error) {
     console.log(error);
 };
 
-export const watchPos = () => {
-    navigator.geolocation.watchPosition(succeed, erratum, { timeout: 2000 });
-};
+/*const btn = document.getElementById('btn');
 
-export const succeed = (position) => {
-    return currentPos = [position.coords.longitude, position.coords.latitude];
-};
+btn.addEventListener('click', getPosition);*/
 
-export const erratum = (error) => {
-    console.log(error)
-};
 
 
 
