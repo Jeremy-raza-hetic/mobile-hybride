@@ -1,3 +1,5 @@
+import {bindDB} from './database/server.js'
+import {bindCard} from './card'
 import mapboxgl from 'mapbox-gl'
 
 mapboxgl.accessToken = 'pk.eyJ1IjoianVhbmJ6IiwiYSI6ImNqY2l2aGJ1ZTFyb3gzNHBhcXg0b2kxMzgifQ.xE9EAnPpVLK3F3WxEhj1hg'
@@ -32,6 +34,7 @@ map.on('load', () => {
 
   map.on('click', 'symbols', function (e) {
     console.log(e.features[0].properties)
+    bindCard(e.features[0].properties.name, e.features[0].properties.description)
   })
 
   map.on('mouseenter', 'symbols', function () {
@@ -41,14 +44,15 @@ map.on('load', () => {
   map.on('mouseleave', 'symbols', function () {
     map.getCanvas().style.cursor = ''
   })
+
+  bindDB()
 })
 
-console.log(map.getSource('geojson'))
+
 
 export const updateData = (dataOject) => {
   data.features.push(dataOject)
   map.getSource('geojson').setData(data)
-  console.log(map.getSource('geojson'))
 }
 
 export default map
