@@ -1,63 +1,69 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
-        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <link rel="stylesheet" type="text/css" href="font.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-    <div class="login">
-        <h1>wego</h1>
-        <form>
-            <input type="email" name="" value="" placeholder="E-mail" id="email">
-            <input type="password" name="" value="" placeholder="Password" id="password">
-            <input type="button" name="" value="Let's go !" id="btnlog">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="font.css">
+    <title>Hello World</title>
+</head>
+<body>
+<div class="login">
+    <h1>wego</h1>
+    <form>
+        <input type="email" name="" value="" placeholder="E-mail" id="email">
+        <input type="password" name="" value="" placeholder="Password" id="password">
+        <input type="button" name="" value="Let's go !" id="btnlog">
+    </form>
+    <a class="signUp" id="btnsign" href="#">Don't have an account yet ?</a>
+</div>
+<div class='tabbar'>
+    <div class="icon-rocket-icon"></div>
+    <div class="mainCircleButton" id="mainCircleButton">
+        <div class="icon-push-pin-icon"></div>
+    </div>
+    <div class="icon-avatar-icon"></div>
+</div>
+<div class='card' id="card">
+    <div class="card-img">
+    </div>
+    <div class="card-texts">
+        <div class="card-title" id="card-title">
+        </div>
+        <div class="card-description" id="card-description">
+        </div>
+    </div>
+</div>
+<div class='addPin' id="addPin">
+    <div class='wrap'>
+        <form onsubmit="event.preventDefault()">
+            <input type="text" name="" value="" placeholder="Titre">
+            <textarea name="name" rows="8" placeholder="Description"></textarea>
+            <input type="button" name="" value="Annuler">
+            <input type="submit" name="" value="Valider">
         </form>
-        <a class="signUp" id="btnsign" href="#">Don't have an account yet ?</a>
     </div>
-    <div class='tabbar'>
-        <div class="icon-rocket-icon"></div>
-        <div class="mainCircleButton">
-            <div class="icon-push-pin-icon"></div>
-        </div>
-        <div class="icon-avatar-icon"></div>
-    </div>
-    <div class='card'>
-        <div class="card-img">
-        </div>
-        <div class="card-texts">
-            <div class="card-title">
-                Title
-            </div>
-            <div class="card-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam faucibus est. Morbi ornare placerat urna. Donec tempor sapien quis metus suscipit, eget elementum neque volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent consequat aliquet arcu vel vehicula. Quisque commodo elit nec efficitur blandit. Nulla vulputate, magna a ullamcorper semper, sem eros condimentum dolor, vitae sagittis ante leo non risus.
-            </div>
-        </div>
-    </div>
+</div>
 
+<div id='map' style='width: 100vw; height: 100vh;'></div>
 
-    <div id='map' style='width: 100vw; height: 100vh;'></div>
-
-      <script type="text/javascript" src="cordova.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
-      <script>
-          // Initialize Firebase
-          var config = {
-              apiKey: "AIzaSyA0nYusQEvt3tygQiWTe6t_lcheuz9MvpA",
-              authDomain: "wewalk-23025.firebaseapp.com",
-              databaseURL: "https://wewalk-23025.firebaseio.com/",
-              storageBucket: "gs://wewalk-23025.appspot.com",
-
-          };
-          firebase.initializeApp(config);
-      </script> 
-      <script type="text/javascript" src="bundle.js"></script>
-    </body>
+<script type="text/javascript" src="cordova.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+            apiKey: "AIzaSyA0nYusQEvt3tygQiWTe6t_lcheuz9MvpA",
+            authDomain: "wewalk-23025.firebaseapp.com",
+            databaseURL: "https://wewalk-23025.firebaseio.com/",
+            storageBucket: "gs://wewalk-23025.appspot.com",
+    };
+    firebase.initializeApp(config);
+</script>
+<script type="text/javascript" src="bundle.js"></script>
+</body>
 </html>

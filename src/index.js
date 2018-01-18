@@ -1,8 +1,6 @@
-import './app'
+import './user'
 import './database/server'
 import './features/camera'
 import './features/geolocation'
 import './map'
-
-
-
+import './addpin'

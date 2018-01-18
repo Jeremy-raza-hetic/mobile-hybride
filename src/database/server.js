@@ -1,52 +1,43 @@
 
-const db = firebase.database();
-const store = firebase.storage();
-const storeRef = firebase.storage().ref();
-const places = firebase.database().ref('places');
-const user = true;
+import {updateData} from '../map.js'
 
-export const getValue = places.on("value", snapshot => {},
-    error => {
-        console.log("Error: " + error.code);
-});
+let db = firebase.database()
+let places = firebase.database().ref('places')
 
-export const addValue = places.on('child_added', data => {
-    const newPin = data.val();
-    return newPin;
-});
-
-export const updateValue = places.on('child_changed', data => {
-    const updatedPin = data.val();
-    return updatedPin;
-});
-
-// Add new pin
-export const addNewPin = (description, localisation, pictureEncoded, name) => {
-    if (user) {
-        storeRef.putString(pictureEncoded, 'base64url')
-            .then((snapshot) => {
-                const imgURL = snapshot.downloadURL;
-        });
-        const newPlacesRef = places.push();
-        const newPlaceId = firebase.database().ref().child('places').push().key;
-        newPlacesRef.set({
-            _id: newPlaceId,
-            description,
-            localisation,
-            picturesUrl: imgURL,
-            name
-        });
-    } else {
-        console.log('Not authentified');
+export const bindDB = () => {
+  places.on('value', snapshot => {
+    const val = snapshot.val()
+    if (val !== null) {
+      Object.keys(val).map(e => val[e]).map(e => {
+        updateData({
+          'type': 'Feature',
+          'properties': {
+            id: e._id,
+            name: e.name,
+            description: e.description
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [
+              e.localisation.lng,
+              e.localisation.lat
+            ]
+          }
+        })
+      })
     }
+  })
+}
+
+export const addNewPin = (description, localisation, pictureEncoded, name) => {
+  const newPlacesRef = places.push()
+  const newPlaceId = firebase.database().ref().child('places').push().key
+  console.log(newPlaceId)
+  newPlacesRef.set({
+    _id: newPlaceId,
+    description,
+    localisation,
+    pictureEncoded,
+    name
+  })
 };
-
-
-
-
-
-
-
-
-
-
