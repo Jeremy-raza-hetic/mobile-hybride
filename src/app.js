@@ -52,19 +52,19 @@
   })
 
     //Deconnexion d'un utilisateur
-    btnout.addEventListener('click', e => {
-
-      const auth = firebase.auth()
-
-      auth.signOut().then(function() {
-        console.log('sign out')
-        body.classList.remove('logged')
-      }).catch(function(error) {
-        console.log('error')
-      })
-      
-
-    })
+    // btnout.addEventListener('click', e => {
+    //
+    //   const auth = firebase.auth()
+    //
+    //   auth.signOut().then(function() {
+    //     console.log('sign out')
+    //     body.classList.remove('logged')
+    //   }).catch(function(error) {
+    //     console.log('error')
+    //   })
+    //
+    //
+    // })
 
     //Inscription d'un utilisateur
   btnsign.addEventListener('click', e => {
